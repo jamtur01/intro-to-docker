@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="css/theme/docker.css" id="theme">
     <link rel="stylesheet" href="css/presentation.css">
 
 		<!-- For syntax highlighting -->
@@ -38,11 +38,11 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
-        <section>
-        <h2>Introduction to <br />Docker</h2>
+        <section data-background="#253237">
+        <h2>Introduction to Docker</h2>
           <h3>Containerization is the new virtualization</h3>
           <div>
-            <img alt="logo" src="images/logo.png" class="plain" style="text-align: center; height: 400px">
+            <img alt="logo" src="images/logo.png" class="plain" style="text-align: center; height: 400px; border: 0;">
           </div>
           <div style="float: right">
             <br> <br> <br> <br> <br> <br> <br>
@@ -59,8 +59,7 @@
           </div>
 
           <ul>
-            <li> engineer and operations chap
-            <li> open source chap
+            <li> VP of Services at Docker
             <li> funny accent
           </ul>
 
@@ -68,37 +67,28 @@
         <small> <a href="http://www.flickr.com/photos/jennicatpink/">(photo by Jennie Rainsford)</a> </small>
         </section>
 
-        <section>
-          <h2> The Docker Book </h2>
+      <section>
+         <h1>So what is Docker?</h1>
+       </section>
 
-          <div>
-            <a href="http://www.dockerbook.com"><img alt="docker book" src="images/cover.png" class="plain" style="text-align: center; height: 400px"></a>
-          </div>
+       <section>
+         <h1>Container virtualization</h1>
+       </section>
 
-          <h3><a href="http://www.dockerbook.com">www.dockerbook.com</a></h3>
-        </section>
+       <section>
+         <h1>Build, ship, run</h1>
 
-        <section>
-          <h1>Who are you folks?</h1>
-        </section>
+         <div>
+           <img alt="container" src="images/container.jpg" class="plain" style="text-align: center; width: 600px; height: 400px">
+         </div>
+       </section>
 
-        <section>
-          <h2>What's this going to be all about?</h2>
-          <ul>
-            <li>What
-            <li>Why
-            <li>How
-          </ul>
-        </section>
+       <section>
+         <h1>Build once, run in many places</h1>
+       </section>
 
-        <section>
-         <h2>So what is Docker?</h2>
-         <ul>
-           <li>Container virtualization
-           <li>Build, pack, ship and run applications as containers
-           <li>Build once, run in many places
-           <li>Isolated and content agnostic
-         </ul>
+       <section>
+         <h1>Isolated, layered, standard and content agnostic</h1>
        </section>
 
        <section>
@@ -115,29 +105,17 @@
        </section>
 
        <section>
-         <h2>Why developers care...</h2>
+         <h2>What can I use Docker for?</h2>
          <ul>
-           <li>A clean, safe, hygienic and portable runtime environment
-           <li>No worries about missing dependencies, packages and other pain points
-           <li>Run each app in its own isolated container, so you can run various versions of libraries and other dependencies
-           <li>Automate testing, integration, packaging
-           <li>Reduce/eliminate concerns about compatibility on different platforms
+           <li>Docker for CI/CD
+           <li>Packaging and deploying applications
+           <li>Build your own PAAS
+           <li>Deploy applications at hyperscale!
           </ul>
        </section>
 
        <section>
-          <h2>Why operations care...</h2>
-          <ul>
-            <li>Make the entire lifecycle more efficient, consistent, and repeatable
-            <li>Increase the quality of code produced by developers
-            <li>Eliminate inconsistencies between development, test, and production environments
-            <li>Support segregation of duties
-            <li>Significantly improves the speed and reliability of continuous deployment and integration
-          </ul>
-       </section>
-
-       <section>
-         <h2>So why not VMs or Cloud?</h2>
+         <h2>So why not virtual machines?</h2>
          <ul>
            <li>Speed of deployment
            <li>Portability
@@ -148,12 +126,23 @@
        </section>
 
        <section>
+         <h2>So how does this work with Puppet or Chef?</h2>
+         <ul>
+           <li>Chef and Puppet are state management tools
+           <li>Less complex
+           <li>Docker images are version controlled and layered
+           <li>Smaller, self-contained and lightweight
+         </ul>
+       </section>
+
+       <section>
          <h2>Technology Stack</h2>
          <ul>
-           <li>Runs (for now) on most Linux distros
-           <li>cgroups and namespacing
-           <li>Device Mapper or AUFS or vfs or &lt;pluggable in future&gt;
-           <li>lxc or &lt;pluggable in future&gt;
+           <li>Runs on most Linux distros
+           <li>Boot2Docker for OSX and Windows
+           <li>Uses Linux kernel features
+           <li>Storage is provided by Union File systems
+           <li>Container format
          </ul>
        </section>
 
@@ -168,8 +157,34 @@
          <h2>Docker Basics</h2>
          <ul>
            <li>Image
-           <li><a href="https://index.docker.io">Registry</a>
+           <li><a href="https://index.docker.io">Registry - http://index.docker.io</a>
            <li>Container
+         </ul>
+       </section>
+
+       <section>
+         <h2>Images</h2>
+         <ul>
+           <li>Images are the source of containers
+           <li>Launch containers from your images
+           <li>Images are "built" and layered
+           <li>Images are stored in a registry
+         </ul>
+       </section>
+
+       <section>
+         <h2>Pulling an image</h2>
+         <pre><code class="bash" data-trim>$ sudo docker pull ubuntu</code></pre>
+         <br /><br />
+       </section>
+
+       <section>
+         <h2>Layers</h2>
+         <ul>
+           <li>Each image is made up of layers
+           <li>Like Linux the bottom layer is a root file system
+           <li>Docker uses union file system mounting
+           <li>Top layer is writable and created when a container is launched
          </ul>
        </section>
 
@@ -178,15 +193,15 @@
          <pre><code>
            FROM       ubuntu
            MAINTAINER James Turnbull "james@example.com"
-           
+
            RUN apt-get install -y apache2
-           
+
            ENV APACHE_RUN_USER www-data
            ENV APACHE_RUN_GROUP www-data
            ENV APACHE_LOG_DIR /var/log/apache2
-           
+
            EXPOSE 80
-           
+
            ENTRYPOINT ["/usr/sbin/apache2"]
            CMD ["-D", "FOREGROUND"]
          </code></pre>
@@ -195,20 +210,56 @@
        <section>
          <h2>Building the image</h2>
          <pre><code class="bash" data-trim>$ sudo docker build -t="jamtur01/apache2" .</code></pre>
+         <br /><br />
+       </section>
+
+       <section>
+         <h2>The Registry</h2>
+           <ul>
+             <li>Stores images
+             <li>Docker pushes and pulls images from the registry.
+             <li>There's a public registry or you can run your own.
        </section>
 
        <section>
          <h2>Pushing the image</h2>
          <pre><code class="bash" data-trim>$ sudo docker push jamtur01/apache2 </code></pre>
-       </section>
-         
-       <section>
-         <h2>Running the container</h2>
-         <pre><code class="bash" data-trim>$ sudo docker run -d -p 80 -v /var/www/myapp jamtur01/apache2</code></pre>
+         <br /><br />
        </section>
 
        <section>
-         <iframe width="900" height="600" scrolling="no" src="http://localhost:4200"></iframe>
+         <h2>Containers</h2>
+          <ul>
+           <li>Containers are launched from images
+           <li>They contain one or more running processes
+           <li>Can be started, stopped, restarted and killed
+          </ul>
+       </section>
+
+       <section>
+         <h2>Images versus containers?</h2>
+          <ul>
+           <li>An image is a stopped container
+           <li>You make an image by committing a container
+           <li>Images are building, containers are running
+         </ul>
+       </section>
+
+       <section>
+         <h2>Running the container</h2>
+         <pre><code class="bash" data-trim>$ sudo docker run -d -p 80 -v /var/www/myapp jamtur01/apache2</code></pre>
+         <br /><br />
+       </section>
+
+       <section>
+         <h2>Resources</h2>
+
+           <ul style="list-style-type: none;">
+             <li><b>Community:</b> https://www.docker.io/community/<br />
+             <li><b>Mailing list:</b> https://groups.google.com/forum/#!forum/docker-user<br />
+             <li><b>Meetups:</b> https://www.docker.io/community/#Docker-Meetups
+           </ul>
+
        </section>
 
        <section>

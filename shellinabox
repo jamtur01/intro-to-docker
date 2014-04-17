@@ -1,7 +1,14 @@
-shellinaboxd \
-   --localhost-only \
-   --background="`dirname $0`/shellinabox.pid" \
-   --service /:james:staff:HOME:"env SSH_AUTH_SOCK=$SSH_AUTH_SOCK ssh root@162.243.109.190" \
-   --css white-on-black.css \
-   --no-beep \
-   --disable-ssl
+#!/bin/sh
+
+for i in 0 1 2 3; do
+    port="$((4200+$i))"
+
+    shellinaboxd \
+      --localhost-only \
+      --background="`dirname $0`/shellinabox.$i.pid" \
+      --port=$port \
+      --service /:james:staff:HOME:"ssh root@162.243.109.190 cd itd" \
+      --css white-on-black.css \
+      --no-beep \
+      --disable-ssl
+done
