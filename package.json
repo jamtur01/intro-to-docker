@@ -21,8 +21,11 @@
     "node": "~0.8.0"
   },
   "dependencies": {
+    "websocket": "",
+    "pty.js": "",
+    "optimist": "",
     "underscore": "~1.5.1",
-    "express": "~2.5.9",
+    "express": "3.5.1",
     "mustache": "~0.7.2",
     "socket.io": "~0.9.13"
   },

@@ -176,6 +176,7 @@
          <h2>Pulling an image</h2>
          <pre><code class="bash" data-trim>$ sudo docker pull ubuntu</code></pre>
          <br /><br />
+         <iframe width="900" height="400" scrolling="no" src="http://localhost:4200"></iframe>
        </section>
 
        <section>
@@ -211,6 +212,7 @@
          <h2>Building the image</h2>
          <pre><code class="bash" data-trim>$ sudo docker build -t="jamtur01/apache2" .</code></pre>
          <br /><br />
+         <iframe width="900" height="400" scrolling="no" src="http://localhost:4201"></iframe>
        </section>
 
        <section>
@@ -218,13 +220,14 @@
            <ul>
              <li>Stores images
              <li>Docker pushes and pulls images from the registry.
-             <li>There's a public registry or you can run your own.
+             <li>There's a public registry called Docker.io or you can run your own.
        </section>
 
        <section>
          <h2>Pushing the image</h2>
          <pre><code class="bash" data-trim>$ sudo docker push jamtur01/apache2 </code></pre>
          <br /><br />
+         <iframe width="900" height="400" scrolling="no" src="http://localhost:4202"></iframe>
        </section>
 
        <section>
@@ -249,6 +252,7 @@
          <h2>Running the container</h2>
          <pre><code class="bash" data-trim>$ sudo docker run -d -p 80 -v /var/www/myapp jamtur01/apache2</code></pre>
          <br /><br />
+         <iframe width="900" height="400" scrolling="no" src="http://localhost:4203"></iframe>
        </section>
 
        <section>

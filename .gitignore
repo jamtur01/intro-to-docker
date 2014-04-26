@@ -2,5 +2,6 @@
 .svn
 log/*.log
 tmp/**
+nohup.out
 node_modules/
 .sass-cache
