@@ -1,0 +1,10 @@
+#!/bin/sh
+
+for i in 0 1 2 3; do
+    port="$((4200+$i))"
+
+    nohup node app.js \
+     -p $port \
+     --sshhost 162.243.109.190 \
+     --sshuser root &
+    done
