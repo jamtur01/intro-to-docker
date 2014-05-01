@@ -22,10 +22,16 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -43,11 +49,6 @@
           <h3>Containerization is the new virtualization</h3>
           <div>
             <img alt="logo" src="images/logo.png" class="plain" style="text-align: center; height: 400px; border: 0;">
-          </div>
-          <div style="float: right">
-            <br> <br> <br> <br> <br> <br> <br>
-            <p style="width: 100%; text-align: right">James Turnbull</p>
-            <p style="width: 100%; text-align: right">@kartar</p>
           </div>
         </section>
 
@@ -69,7 +70,7 @@
         <small> <a href="http://www.flickr.com/photos/jennicatpink/">(photo by Jennie Rainsford)</a> </small>
         </section>
 
-     <section>
+        <section>
           <h2> The Docker Book </h2>
 
           <div>
