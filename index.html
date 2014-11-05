@@ -122,7 +122,10 @@
 
 
       <section>
-        <h1>Isolated, layered, standard and content agnostic</h1>
+        <h2>Isolated</h2>
+        <h2>Layered</h2>
+        <h2>Standard</h2>
+        <h2>Content agnostic</h2>
       </section>
 
       <section>
@@ -146,16 +149,18 @@
       </section>
 
       <section>
-        <h2>Caring</h2>
-        <div>
-          <img alt="caring" src="images/caring.jpg" class="plain" style="text-align: center; width: 600px; height: 400px">
-        </div>
-
-        <h4>Containers boot faster</h4>
-        <h4>Containers have less overhead</h4>
-        <h4>Containers bring native performance</h4>
-        <h4>Containers are Cloud &amp; VM-compatible</h4>
+        <h3>Containers boot faster</h3>
+        <h3>Containers have less overhead</h3>
+        <h3>Containers bring native performance</h3>
+        <h3>Containers are Cloud &amp; VM-compatible</h3>
       </section>
+
+<section>
+  <h2>Caring</h2>
+  <div>
+    <img alt="caring" src="images/caring.jpg" class="plain" style="text-align: center; width: 600px; height: 400px">
+  </div>
+</section>
 
 <section>
   <h2>Devs care about their app<br /><br /> Ops cares about the containers</h2>
@@ -289,11 +294,11 @@
       <section>
         <h2>Managing a container</h2>
         <br />
-        <pre><code style="font-size: 120%" class="bash" data-trim>$ sudo docker  exec XXX</code></pre>
+        <pre><code style="font-size: 120%" class="bash" data-trim>$ sudo docker exec -ti mywebsite /bin/bash</code></pre>
       </section>
 
       <section>
-        <h1>Crond in a container</h1>
+        <h1>Scheduling and jobs in a container</h1>
       </section>
 
        <section>
@@ -305,7 +310,6 @@
         <br />
         <pre><code style="font-size: 120%" class="bash" data-trim>$ sudo docker  run --volumes-from mywebsite -ti ubuntu /bin/bash</code></pre>
       </section>
-
 
       <section>
         <h1>Creates a new architecture</h1>
