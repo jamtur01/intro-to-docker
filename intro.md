@@ -103,6 +103,8 @@ James Turnbull
 
 ---
 
+![](images/Virtual-Boy-Controller.jpg)
+
 # ... not like a VM
 
 1. Containers boot faster
@@ -110,16 +112,16 @@ James Turnbull
 3. Containers bring native performance
 4. Containers are Cloud & VM-compatible
 
-![](images/Virtual-Boy-Controller.jpg)
-
 ---
+
+![](images/Separatory_funnel_with_oil_and_colored_water.jpg)
 
 # Devs care about their app<br /><br />
 # Ops cares about the containers
 
-![](images/Separatory_funnel_with_oil_and_colored_water.jpg)
-
 ---
+
+![](images/devs.jpg)
 
 ## Why developers care...
 
@@ -127,9 +129,9 @@ James Turnbull
 - No worries about dependencies
 - Encourage good architecture
 
-![](images/devs.jpg)
-
 ---
+
+![](images/Missile_Defense_Integration_and_Operations_Center.jpg)
 
 ## Why operations care...
 
@@ -137,9 +139,9 @@ James Turnbull
 - Eliminate inconsistencies
 - Support segregation of duties
 
-![](images/Missile_Defense_Integration_and_Operations_Center.jpg)
-
 ---
+
+![](images/Chopsticks_usage.png)
 
 ## What can I use Docker for?
 
@@ -147,8 +149,6 @@ James Turnbull
 - Packaging and deploying applications
 - Build your own PAAS
 - Deploy applications at hyperscale!
-
-![](images/Chopsticks_usage.png)
 
 ---
 
@@ -272,7 +272,7 @@ $ sudo docker exec -ti mywebsite /bin/bash
 # Logging container
 
 ```bash
-$ sudo docker run --volumes-from mywebsite -ti ubuntu /bin/bash
+$ sudo docker run --volumes-from mywebsite -ti ubuntu tail -f /var/log/apache2/acccess.log
 ```
 
 ---
