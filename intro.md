@@ -22,12 +22,6 @@ James Turnbull
 
 ---
 
-# Kickstarter live in Sweden
-
-![](images/sweden.png)
-
----
-
 # The Docker Book
 
 ![inline](/Users/james/Dropbox/src/intro-to-docker/images/cover.png)
@@ -210,7 +204,7 @@ James Turnbull
 # Building the image
 
 ```bash
-$ sudo docker build -t="jamtur01/0redev" .
+$ sudo docker build -t="jamtur01/vbrownbag" .
 ```
 
 ---
@@ -218,7 +212,7 @@ $ sudo docker build -t="jamtur01/0redev" .
 # Sharing the image
 
 ```bash
-$ sudo docker push jamtur01/0redev
+$ sudo docker push jamtur01/vbrownbag
 ```
 
 ---
@@ -226,8 +220,124 @@ $ sudo docker push jamtur01/0redev
 # Running the container
 
 ```bash
-$ sudo docker run --name mywebsite -ti -p 80:80 jamtur01/0redev
+$ sudo docker run --name mywebsite -ti -p 80:80 jamtur01/vbrownbag
 ```
+
+---
+
+![](images/dawson-cryings.jpg)
+
+# But it's not simple to build a stack
+
+---
+
+![](images/fig.jpg)
+
+# Introducing Fig
+
+- Fast, isolated development environments using Docker.
+- Quick and easy to start.
+- Manages a collection of containers.
+
+---
+
+![](images/figins.jpg)
+
+# Installing Fig
+
+- Install Docker
+- Install Fig
+- Via binary
+- Via pip
+
+---
+
+# Installing Fig
+
+```bash
+$ sudo pip install -U fig
+$ fig --version
+```
+
+---
+
+![](images/newton.jpg)
+
+# Fig basics
+
+- Build your apps with `Dockerfile`'s.
+- Combine applications and images with a `fig.yml` file.
+
+---
+
+# The Dockerfile
+
+```json
+FROM ruby
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
+RUN mkdir /myapp
+WORKDIR /myapp
+ADD Gemfile /myapp/Gemfile
+RUN bundle install
+ADD myapp /myapp
+```
+
+---
+
+# The fig.yml file
+
+```json
+db:
+image: postgres
+ports:
+- "5432"
+web:
+image: jamtur01/figdemo
+command: bundle exec rackup -p 3000
+ports:
+- "3000:3000"
+links:
+- db
+```
+
+---
+
+# Fig details
+
+- Can build images, use existing or pull images
+- Can map ports, manage links and create volumes
+- Still single host centric.
+
+---
+
+# Start Fig
+
+```bash
+$ fig up
+Creating fig_db_1...
+Creating fig_web_1...
+. . .
+```
+
+---
+
+![](images/figtree.jpg)
+
+# Demo
+
+---
+
+![](images/figben.jpg)
+
+# Fig benefits
+
+- Build complex local stacks.
+- Consistent and shareable.
+- No more..
+
+---
+
+![inline](images/fine.jpg)
 
 ---
 
