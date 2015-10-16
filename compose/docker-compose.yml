@@ -1,0 +1,11 @@
+db:
+  image: redis
+  ports:
+    - "6379"
+web:
+  image: jamtur01/fluentdemo
+  command: nodejs server.js
+  ports:
+    - "3000:3000"
+  links:
+    - db
