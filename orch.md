@@ -30,6 +30,14 @@ James Turnbull
 
 ---
 
+# The Art of Monitoring
+
+![](images/monitor.jpg)
+
+### [www.artofmonitoring.com](http://www.artofmonitoring.com)
+
+---
+
 # Who are you folks?
 
 ![](images/who.JPG)
@@ -96,7 +104,9 @@ James Turnbull
 ## Compose
 ## Machine
 ## Swarm
-## Kubenates and friends
+## Kubernetes and friends
+
+![](images/orch.jpg)
 
 ---
 
@@ -125,6 +135,8 @@ $ sudo pip install -U docker-compose
 $ docker-compose --version
 ```
 
+![](images/fig.jpg)
+
 ---
 
 ![](images/newton.jpg)
@@ -149,6 +161,8 @@ WORKDIR /opt/nodeapp
 RUN npm install
 ```
 
+![](images/fig.jpg)
+
 ---
 
 # The docker-compose.yml file
@@ -159,13 +173,15 @@ db:
   ports:
     - "6379"
 web:
-  image: jamtur01/fluentdemo
+  image: jamtur01/0redevdemo
   command: nodejs server.js
   ports:
     - "3000:3000"
   links:
     - db
 ```
+
+![](images/fig.jpg)
 
 ---
 
@@ -174,6 +190,8 @@ web:
 - Can build images, use existing or pull images
 - Can map ports, manage links and create volumes
 - Still single host centric.
+
+![](images/fig.jpg)
 
 ---
 
@@ -185,6 +203,8 @@ Creating compose_db_1...
 Creating compose_web_1...
 . . .
 ```
+
+![](images/fig.jpg)
 
 ---
 
@@ -210,7 +230,9 @@ Creating compose_web_1...
 
 # Docker Machine
 
-## Builds machine
+## Builds machines
+
+![](images/mach.png)
 
 ---
 
@@ -220,16 +242,57 @@ Creating compose_web_1...
 - Manage Docker servers.
 - Target local and cloud nodes.
 
+![](images/mach3.jpg)
+
 ---
 
 # Demo
+
+## Building some Swarm nodes...
+
+![](images/mach2.gif)
 
 ---
 
 # Docker Swarm
 
-- Clustering for Docker
-- Manage multiple Docker daemons
+- Clustering (management) for Docker.
+- Manage multiple Docker daemons.
+- Distribute workloads.
+
+![](images/swarm.JPG)
+
+---
+
+# Demo
+
+## Distributing workloads
+
+![](images/work.jpg)
+
+---
+
+# Service orchestration
+
+![](images/cond.jpg)
+
+---
+
+# Kubernetes
+
+- Based on Google's container model
+- Turns containers into nodes
+
+![](images/kube.png)
+
+---
+
+# Mesosphere
+
+- Workload management & scheduling
+- Docker is an option
+
+![](images/mesos.jpg)
 
 ---
 
